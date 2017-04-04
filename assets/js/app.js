@@ -1,28 +1,42 @@
-var clase1 = document.getElementsByClassName("Chile");
-var clase2 = document.getElementsByClassName("Lima1");
-var clase3 = document.getElementsByClassName("Lima2");
+window.addEventListener("load",function(){
 
-var select = document.getElementById('promomciones');
-select.onchange = function() {
+var general = document.getElementById("general");
+var retratos = document.getElementsByClassName('img');
+var clase1 = document.getElementById("Chile");
+var clase2 = document.getElementById("Lima1");
+var clase3 = document.getElementById("Lima2");
+var select = document.getElementById("promomciones");
 
-	if (select.value == "1") {
-		for (var i = 0; i < clase1.length; i++) {
-			clase2.style.display = "none";
-			clase3.style.display = "none";
-		}
-	}
 
-	if (select.value == "2") {
-		for (var i = 0; i < clase1.length; i++) {
-			clase1.style.display = "none";
-			clase3.style.display = "none";
-		}
-	}
+select.onchange = function (){
+  if(select.value == "Chile"){
+    clase1.style.display = "block";
+    clase2.style.display = "none";
+    clase3.style.display = "none";
+    div.style.display = "none";
+  }
 
-	if (select.value == "3") {
-		for (var i = 0; i < clase1.length; i++) {
-			clase2.style.display = "none";
-			clase1.style.display = "none";
-		}
-	}
+  else if(select.value == "Lima"){
+    clase1.style.display = "none";
+    clase2.style.display = "block";
+    clase3.style.display = "none";
+    div.style.display = "none";
+
+  }
+
+  else if (select.value == "Lima2"){
+    clase1.style.display = "none";
+    clase2.style.display = "none";
+    clase3.style.display = "block";
+    div.style.display = "none";
+
+  }
+
+  else {
+    clase1.style.display = "none";
+    clase2.style.display = "none";
+    clase3.style.display = "none";
+    div.style.display = "block";
+  }
 }
+});
